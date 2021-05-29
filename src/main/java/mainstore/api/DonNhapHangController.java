@@ -22,22 +22,34 @@ public class DonNhapHangController {
 	@Autowired
 	private DonNhapHangService dnhService;
 	
-	// lấy mặt hàng theo id
-	@GetMapping("/{id}")
-	public DonNhapHang getDonNhapHang(@PathVariable("id") Integer id) {
-		DonNhapHang donNhapHang = dnhService.getDonNhapHang(id);
-		if(donNhapHang != null) {
-			return donNhapHang;
-		}
-		return new DonNhapHang();
-			
-	}
+	// lấy đơn hàng theo id
+//	@GetMapping("/{id}")
+//	public DonNhapHang getDonNhapHang(@PathVariable("id") Integer id) {
+//		DonNhapHang donNhapHang = dnhService.getDonNhapHang(id);
+//		if(donNhapHang != null) {
+//			return donNhapHang;
+//		}
+//		return new DonNhapHang();
+//			
+//	}
 	
 	// thêm đơn hàng
 	@PostMapping(consumes="application/json")
 	@ResponseStatus(HttpStatus.CREATED)
 	public DonNhapHang addDonNhapHang(@RequestBody DonNhapHang donNhapHang) {
-		if (dnhService.addDonNhapHang(donNhapHang)) {
+		//không có đơn hàng
+		if(donNhapHang == null) {
+			return null;
+		}
+		
+		// Đơn hàng trống
+		if(donNhapHang.getListHangNhap().size() == 0) {
+			return new DonNhapHang();
+		}
+		
+		// tồn tại đơn hàng
+		donNhapHang = dnhService.addDonNhapHang(donNhapHang);
+		if(donNhapHang != null) {
 			return donNhapHang;
 		}
 		return new DonNhapHang();

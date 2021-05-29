@@ -33,4 +33,55 @@ public class HangNhap{
     private MatHang matHang;
 	
 	public HangNhap() {}
+
+	
+	public HangNhap(int idHangNhap, int soLuong, int donGia, MatHang matHang) {
+		super();
+		this.idHangNhap = idHangNhap;
+		this.soLuong = soLuong;
+		this.donGia = donGia;
+		this.matHang = matHang;
+	}
+
+	
+
+	public HangNhap(int soLuong, int donGia, MatHang matHang) {
+		super();
+		this.soLuong = soLuong;
+		this.donGia = donGia;
+		this.matHang = matHang;
+	}
+
+
+	public int getIdHangNhap() {
+		return idHangNhap;
+	}
+
+	public void setIdHangNhap(int idHangNhap) {
+		this.idHangNhap = idHangNhap;
+	}
+
+	public int getSoLuong() {
+		return soLuong;
+	}
+
+	public void setSoLuong(int soLuong) {
+		this.soLuong = soLuong;
+	}
+
+	public int getDonGia() {
+		return donGia;
+	}
+
+	public void setDonGia(int donGia) {
+		this.donGia = donGia;
+	}
+
+	public MatHang getMatHang() {
+		return matHang;
+	}
+
+	public void setMatHang(MatHang matHang) {
+		this.matHang = matHang;
+	}
 }

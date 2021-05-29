@@ -1,6 +1,7 @@
 package mainstore.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import javax.transaction.Transactional;
 
@@ -24,14 +25,10 @@ public class NhaCungCapService {
 	}
 	
 	// lấy 1 nhà cung cấp theo id
-	public NhaCungCap getNhaCungCap(int id) {
-		try {
-        	return nccRepository.findById(id).get();
-        
-        }catch(Exception e) {
-        	System.out.print("Error from NCC : " + e.getMessage());
-        }
-        return new NhaCungCap();
+	public Optional<NhaCungCap> getNhaCungCap(int id) {
+		
+        return nccRepository.findById(id);  
+     
 	}
 	
 	
@@ -41,13 +38,8 @@ public class NhaCungCapService {
 	}
 	
 	// thêm mới ncc
-	public boolean saveNhaCungCap(NhaCungCap ncc) {
-		try {
-			nccRepository.save(ncc);
-			return true;
-		}catch(Exception e) {
-			System.out.print("Error : " + e.getMessage());
-		}
-		return false;
+	public NhaCungCap saveNhaCungCap(NhaCungCap ncc) {
+		ncc = nccRepository.save(ncc);
+		return ncc;
 	}
 }

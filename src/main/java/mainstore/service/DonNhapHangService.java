@@ -15,18 +15,13 @@ public class DonNhapHangService {
 	@Autowired
 	private DonNhapHangRepository dnhRepository;
 	
-	public boolean addDonNhapHang(DonNhapHang donNhapHang) {
-		try {
-			dnhRepository.save(donNhapHang);
-			return true;
-		}catch(Exception e) {
-			System.out.print("Error : " + e.getLocalizedMessage() );
-		}
-		return false;
+	public DonNhapHang addDonNhapHang(DonNhapHang donNhapHang) {
+		return dnhRepository.save(donNhapHang);
 	}
 	
-	public DonNhapHang getDonNhapHang(int id) {
-		return dnhRepository.findById(id).get();
-	}
+	
+//	public DonNhapHang getDonNhapHang(int id) {
+//		return dnhRepository.findById(id).get();
+//	}
 	
 }

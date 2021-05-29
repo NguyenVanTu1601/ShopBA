@@ -24,7 +24,21 @@ public class NhanVienController {
 	@PostMapping(consumes="application/json", path = "/login")
 	@ResponseStatus(HttpStatus.CREATED)
 	public NhanVien checkLogin(@RequestBody NhanVien nv) {
+		
+		// khi thiếu thông tin đăng nhập
+		if(nv.getTenDangNhap() == null) {
+			return new NhanVien();
+		}
+		if(nv.getMatKhau() == null) {
+			return new NhanVien();
+		}
+		
+		// trường hợp sai thông tin, ko trả về kq
 		nv = nhanVienService.checkLogin(nv);
+		if(nv == null) {
+			return new NhanVien();
+		}
+		
 		return nv;
 	}
 }

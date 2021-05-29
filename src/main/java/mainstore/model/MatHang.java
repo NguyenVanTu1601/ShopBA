@@ -49,6 +49,76 @@ public class MatHang {
 		this.giaNhap = giaNhap;
 		this.active = active;
 	}
+
+
+	public int getIdMatHang() {
+		return idMatHang;
+	}
+
+
+	public void setIdMatHang(int idMatHang) {
+		this.idMatHang = idMatHang;
+	}
+
+
+	public String getLoaiMatHang() {
+		return loaiMatHang;
+	}
+
+
+	public void setLoaiMatHang(String loaiMatHang) {
+		this.loaiMatHang = loaiMatHang;
+	}
+
+
+	public String getTenMatHang() {
+		return tenMatHang;
+	}
+
+
+	public void setTenMatHang(String tenMatHang) {
+		this.tenMatHang = tenMatHang;
+	}
+
+
+	public int getSoLuong() {
+		return soLuong;
+	}
+
+
+	public void setSoLuong(int soLuong) {
+		this.soLuong = soLuong;
+	}
+
+
+	public int getGiaNhap() {
+		return giaNhap;
+	}
+
+
+	public void setGiaNhap(int giaNhap) {
+		this.giaNhap = giaNhap;
+	}
+
+
+	public int getGiaBan() {
+		return giaBan;
+	}
+
+
+	public void setGiaBan(int giaBan) {
+		this.giaBan = giaBan;
+	}
+
+
+	public int getActive() {
+		return active;
+	}
+
+
+	public void setActive(int active) {
+		this.active = active;
+	}
 	
 	
 }

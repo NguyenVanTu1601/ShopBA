@@ -1,5 +1,4 @@
-package mainstore.api;
-
+package mainstore;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.ArrayList;
@@ -11,6 +10,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import mainstore.api.DonNhapHangController;
 import mainstore.model.DonNhapHang;
 import mainstore.model.HangNhap;
 import mainstore.model.MatHang;
@@ -38,18 +38,18 @@ class DonNhapHangControllerTest {
 	void tearDown() throws Exception {
 	}
 
-	@Test
-	void testGetDNHbyIDSuccess() {
-		int  keyID = 1;
-		DonNhapHang dnh = dnhController.getDonNhapHang(keyID);
-		assertEquals(keyID, dnh.getIdDonNhap());
-	}
-	@Test
-	void testGetDNHbyIDFailed() {
-		int  keyID = -11;
-		DonNhapHang dnh = dnhController.getDonNhapHang(keyID);
-		assertEquals(keyID, dnh.getIdDonNhap());
-	}
+//	@Test
+//	void testGetDNHbyIDSuccess() {
+//		int  keyID = 1;
+//		DonNhapHang dnh = dnhController.getDonNhapHang(keyID);
+//		assertEquals(keyID, dnh.getIdDonNhap());
+//	}
+//	@Test
+//	void testGetDNHbyIDFailed() {
+//		int  keyID = -11;
+//		DonNhapHang dnh = dnhController.a(keyID);
+//		assertEquals(keyID, dnh.getIdDonNhap());
+//	}
 	@Test
 	void testAddDonNhapHangSuccess() {
 		DonNhapHang dnh = new DonNhapHang();
