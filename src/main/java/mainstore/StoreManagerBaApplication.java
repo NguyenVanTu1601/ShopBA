@@ -11,3 +11,7 @@ public class StoreManagerBaApplication {
 	}
 
 }
+
+/*
+Lỗi nếu sửa giá bán/ nhập thành trống thì sẽ bị lỗi null poiter
+*/

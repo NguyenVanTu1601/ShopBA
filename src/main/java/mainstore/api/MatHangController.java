@@ -95,6 +95,21 @@ public class MatHangController {
 		return null;
 	}
 	
+	// sửa mặt hàng
+	@PostMapping(consumes="application/json", path = "/edit")
+	@ResponseStatus(HttpStatus.CREATED)
+	public MatHang editMatHang(@RequestBody MatHang matHang) {
+		if (matHang == null) {
+			return null;
+		}
+		
+		matHang = matHangService.saveMatHang(matHang);
+		if(matHang != null) {
+			return matHang;
+		}
+		return null;
+	}
+	
 	// xóa mặt hàng
 	@DeleteMapping("/delete/{id}")
 	public void deleteMatHang(@PathVariable(name = "id") int id) {
