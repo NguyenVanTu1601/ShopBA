@@ -1,6 +1,6 @@
 package mainstore;
 
-import static org.junit.jupiter.api.Assertions.*;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,7 +11,6 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -81,8 +80,14 @@ class MatHangControllerJunitTest {
 	public void testFindByName_Exist() {
 		List<MatHang> listMatHang = matHangController.searchMatHang("Sách");
 		MatHang matHang = listMatHang.get(0);
-		MatHang matHangTest = new MatHang(2, "Sách", "Sách Tiếng Anh", 4, 15000, 17000, 1);
-		Assertions.assertEquals(matHang, matHangTest);
+		MatHang matHangTest = new MatHang(2, "Sách", "Sách Tiếng Anh", 5, 15500, 17000, 1);
+		Assertions.assertEquals(matHang.getIdMatHang(), matHangTest.getIdMatHang());
+		Assertions.assertEquals(matHang.getTenMatHang(), matHangTest.getTenMatHang());
+		Assertions.assertEquals(matHang.getSoLuong(), matHangTest.getSoLuong());
+		Assertions.assertEquals(matHang.getGiaBan(), matHangTest.getGiaBan());
+		Assertions.assertEquals(matHang.getGiaNhap(), matHangTest.getGiaNhap());
+		Assertions.assertEquals(matHang.getActive(), matHangTest.getActive());
+		
 
 	}
 
@@ -126,7 +131,7 @@ class MatHangControllerJunitTest {
 
 		MatHang matHang = new MatHang("Đồ dùng học tập", "Tẩy bút chì", 0, 2500, 3000, 1);
 		matHang = matHangController.addMatHang(matHang);
-		MatHang matHangTest = new MatHang(1, "Đồ dùng học tập", "Tẩy bút chì", 0, 2500, 3000, 1);
+		MatHang matHangTest = new MatHang(61, "Đồ dùng học tập", "Tẩy bút chì", 0, 2500, 3000, 1);
 		Assertions.assertEquals(matHang.getIdMatHang(), matHangTest.getIdMatHang());
 		Assertions.assertEquals(matHang.getLoaiMatHang(), matHangTest.getLoaiMatHang());
 		Assertions.assertEquals(matHang.getTenMatHang(), matHangTest.getTenMatHang());
@@ -151,7 +156,14 @@ class MatHangControllerJunitTest {
 		MatHang matHang = new MatHang(1, "Đồ dùng học tập", "Tẩy bút chì", 100, 2700, 3000, 1);
 		matHang = matHangController.addMatHang(matHang);
 		MatHang matHangTest = new MatHang(1, "Đồ dùng học tập", "Tẩy bút chì", 100, 2700, 3000, 1);
-		Assertions.assertEquals(matHang, matHangTest);
+		Assertions.assertEquals(matHang.getIdMatHang(), matHangTest.getIdMatHang());
+		Assertions.assertEquals(matHang.getTenMatHang(), matHangTest.getTenMatHang());
+		Assertions.assertEquals(matHang.getSoLuong(), matHangTest.getSoLuong());
+		Assertions.assertEquals(matHang.getGiaNhap(), matHangTest.getGiaNhap());
+		Assertions.assertEquals(matHang.getGiaBan(), matHangTest.getGiaBan());
+		Assertions.assertEquals(matHang.getActive(), matHangTest.getActive());
+		Assertions.assertEquals(matHang.getLoaiMatHang(), matHangTest.getLoaiMatHang());
+		
 	}
 
 	// xóa mặt hàng
@@ -167,7 +179,7 @@ class MatHangControllerJunitTest {
 	// cập nhật số lượng khi thêm mặt hàng
 	@Test
 	public void updateAmount() {
-		MatHang matHang = new MatHang(11, "Đồ dùng học tập", "Bút xóa", 8, 6800, 7000, 1);
+		MatHang matHang = new MatHang(11, "Đồ dùng học tập", "Bút xóa", 8, 6500, 7000, 1);
 		HangNhap hangNhap = new HangNhap(2, 6800, matHang);
 		matHangController.updateMatHang(hangNhap);
 
@@ -176,7 +188,7 @@ class MatHangControllerJunitTest {
 		Assertions.assertEquals("Đồ dùng học tập", matHangTest.getLoaiMatHang());
 		Assertions.assertEquals("Bút xóa", matHangTest.getTenMatHang());
 		Assertions.assertEquals(10, matHangTest.getSoLuong());
-		Assertions.assertEquals(6800, matHangTest.getGiaNhap());
+		Assertions.assertEquals(6500, matHangTest.getGiaNhap());
 		Assertions.assertEquals(7000, matHangTest.getGiaBan());
 		Assertions.assertEquals(1, matHangTest.getActive());
 
