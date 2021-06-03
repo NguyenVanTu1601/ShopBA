@@ -23,15 +23,15 @@ public class DonNhapHangController {
 	private DonNhapHangService dnhService;
 	
 	// lấy đơn hàng theo id
-//	@GetMapping("/{id}")
-//	public DonNhapHang getDonNhapHang(@PathVariable("id") Integer id) {
-//		DonNhapHang donNhapHang = dnhService.getDonNhapHang(id);
-//		if(donNhapHang != null) {
-//			return donNhapHang;
-//		}
-//		return new DonNhapHang();
-//			
-//	}
+	@GetMapping("/{id}")
+	public DonNhapHang getDonNhapHang(@PathVariable("id") Integer id) {
+		DonNhapHang donNhapHang = dnhService.getDonNhapHang(id);
+		if(donNhapHang != null) {
+			return donNhapHang;
+		}
+		return new DonNhapHang();
+			
+	}
 	
 	// thêm đơn hàng
 	@PostMapping(consumes="application/json")

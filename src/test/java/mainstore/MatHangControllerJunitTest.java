@@ -111,7 +111,7 @@ class MatHangControllerJunitTest {
 
 	}
 
-	// thêm mặt hàng
+	/* thêm mặt hàng */
 	// trường hợp mặt hàng null
 	@Test
 	public void addMatHang_NULL() {

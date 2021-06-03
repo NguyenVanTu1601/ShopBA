@@ -20,8 +20,8 @@ public class DonNhapHangService {
 	}
 	
 	
-//	public DonNhapHang getDonNhapHang(int id) {
-//		return dnhRepository.findById(id).get();
-//	}
+	public DonNhapHang getDonNhapHang(int id) {
+		return dnhRepository.findById(id).get();
+	}
 	
 }
