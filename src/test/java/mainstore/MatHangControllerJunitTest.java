@@ -131,7 +131,7 @@ class MatHangControllerJunitTest {
 
 		MatHang matHang = new MatHang("Đồ dùng học tập", "Tẩy bút chì", 0, 2500, 3000, 1);
 		matHang = matHangController.addMatHang(matHang);
-		MatHang matHangTest = new MatHang(61, "Đồ dùng học tập", "Tẩy bút chì", 0, 2500, 3000, 1);
+		MatHang matHangTest = new MatHang(14, "Đồ dùng học tập", "Tẩy bút chì", 0, 2500, 3000, 1);
 		Assertions.assertEquals(matHang.getIdMatHang(), matHangTest.getIdMatHang());
 		Assertions.assertEquals(matHang.getLoaiMatHang(), matHangTest.getLoaiMatHang());
 		Assertions.assertEquals(matHang.getTenMatHang(), matHangTest.getTenMatHang());
